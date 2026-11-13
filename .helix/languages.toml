@@ -1,0 +1,31 @@
+[language-server.basedpyright]
+command = "basedpyright-langserver"
+args = ["--stdio"]
+
+[language-server.ruff]
+command = "ruff"
+args = ["server"]
+
+[[language]]
+name = "python"
+language-servers = ["basedpyright", "ruff"]
+formatter = { command = "ruff", args = ["format", "-"] }
+auto-format = true
+
+[language.debugger]
+name = "debugpy"
+transport = "tcp"
+command = "debugpy-adapter"
+port-arg = "--port {}"
+
+[[language.debugger.templates]]
+name = "script"
+request = "launch"
+completion = [{ name = "file", completion = "filename", default = "main.py" }]
+args = { program = "{0}", cwd = ".", python = [".venv/bin/python"], stopOnEntry = false, justMyCode = true, subProcess = true, runInTerminal = true }
+
+[[language.debugger.templates]]
+name = "module"
+request = "launch"
+completion = [{ name = "module", default = "main" }]
+args = { module = "{0}", cwd = ".", python = [".venv/bin/python"], stopOnEntry = false, justMyCode = true, subProcess = true, runInTerminal = true }
