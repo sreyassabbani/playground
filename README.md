@@ -1,8 +1,10 @@
-# playground
+Fleeting thoughts are hard to maintain.
 
-Where I mess around with concepts and pin down fleeting thoughts—not answering questions for a test (that's [competitive-programming](https://github.com/sreyassabbani/competitive-programming)).
+(you might want to cf. [competitive-programming](https://github.com/sreyassabbani/competitive-programming))
 
-Organized by topic. Any language; mostly C++ and Python so far.
+---
+
+Organized by topic.
 
 ```
 [topic]
